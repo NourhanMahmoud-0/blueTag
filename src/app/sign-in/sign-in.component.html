@@ -1,0 +1,88 @@
+
+
+<div class="d-flex flex-column align-items-center justify-content-center p-4">
+  <div class="col-12 text-center">
+    <img alt="Logo" src="https://bluetags.me/uploads/settings/9/colored-logo-50.png" class="img-fluid logo-fix-size mx-auto d-block">
+  </div>
+</div>
+
+
+<!-- ****************** -->
+
+<div class="form-wid mx-auto">
+  <!-- ERROR -->
+  <div *ngIf="apiError" class="alert alert-danger">
+        <div class="d-flex">
+            <i class="fa-solid fa-face-frown me-5"></i>
+            <span class="mt-1">These credentials do not match our records.</span>
+        </div>
+ </div>
+ <!-- ERROR -->
+
+
+  <div class="form-bg px-5 pb-4 pt-3">
+    <h2 class="fs-3 text-center mb-5"> sign in </h2>
+    <form [formGroup]="loginForm"(ngSubmit)= "login(loginForm)">
+        <div class="mb-4">
+          <label class="mb-2" for="email"> Email:<span class="required"></span>
+          </label>
+          <input type="email" id="email" formControlName="email" class="form-control mb-2" placeholder="Email">
+          <!-- **** -->
+          <div *ngIf="loginForm.get('email')?.errors && (loginForm.get('email')?.touched || isNotValidForm)" class="alert alert-danger">
+            <p class="mb-0" *ngIf="loginForm.get('email')?.getError('required')">Email is required</p>
+            <p class="mb-0" *ngIf="loginForm.get('email')?.getError('email')">Email invalid</p>
+          </div>
+          <!-- **** -->
+        </div>
+
+        <div class="mb-4 position-relative">
+          <div class="d-flex justify-content-between">
+              <label for="password" class="form-label">Password:<span class="required"></span></label>
+                <a routerLink="/forget-password" class="link-info fs-6 text-decoration-none">
+                      Forgot your password?
+                </a>
+          </div>
+          <div class="mb-3 ">
+              <input [type]="changeType?'password':'text'" id="name" formControlName="password" class="form-control mb-2" placeholder="Password">
+              <span class="eyeIcon position-absolute" (click)="viewPass()">
+                <i [ngClass]="visible?'fas fa-eye':'fa-solid fa-eye-slash'"></i>
+              </span>
+              <div *ngIf="loginForm.get('password')?.errors && (loginForm.get('password')?.touched || isNotValidForm)" class="alert alert-danger">
+                <p class="mb-0" *ngIf="loginForm.get('password')?.getError('required')">Password is required</p>
+                <p class="mb-0" *ngIf="loginForm.get('password')?.getError('pattern')">invalid password</p>
+              </div>
+
+          </div>
+      </div>
+
+      <div class="mb-4 form-check">
+        <input type="checkbox" class="form-check-input" id="remember_me" checked="">
+        <label class="form-check-label" for="remember_me">Remember me</label>
+    </div>
+
+    <div class="d-grid">
+      <button class="btn btn-primary" type="submit">
+        <i *ngIf="isLoading" class="fa fa-spinner fa-spin"></i>
+        <span *ngIf="!isLoading">login</span>
+        </button>
+    </div>
+
+    </form>
+  </div>
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="container-fluid padding-0 py-3">
+      <div class="row align-items-center justify-content-center">
+          <div class="col-xl-6">
+            <div class="copyright text-center text-muted">
+              All Rights Reserved © 2024
+              <!-- <a href="https://bluetags.me" class="font-weight-bold ml-1" target="_blank">Blue Tags</a> -->
+          </div>
+          </div>
+      </div>
+  </div>
+</footer>
+

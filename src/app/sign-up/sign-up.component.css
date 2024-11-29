@@ -1,0 +1,31 @@
+
+.form-wid{
+  max-width:540px ;
+  box-shadow: 0 5px 20px rgba(173, 181, 189, .2);
+  border-radius: .938rem;
+}
+.form-check
+{
+  display: block;
+  margin-bottom: .125rem;
+  min-height: 1.5rem;
+  padding-left: 2.063em;
+  font-size: .875rem;
+}
+.txt-color{
+ color: #495057;
+}
+.required::after{
+  color: #f62947;
+  content: "*";
+  font-weight: 700;
+  position: relative;
+}
+.eyeIcon{
+  right: 15px;
+  top: 10px;
+  cursor: pointer;
+  color: #6c757d;
+  font-size: 13px;
+}
+

@@ -1,0 +1,61 @@
+
+
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+
+.container-fluid{
+  background-color:#eff3f7;
+}
+
+/* #212529 */
+/* #6c757d */
+
+h1{
+  color: #212529;
+  font-weight: 500;
+  font-size: 1.375rem;
+  /* line-height: 1.313rem; */
+}
+a{
+  /* line-height: 1.313rem; */
+}
+.col-12{
+ /* background-color: brown; */
+ flex: 0 0 auto;
+ width:100% ;
+}
+
+.card{
+
+  word-wrap: break-word;
+  background-clip: border-box;
+  background-color: #fff;
+  border: 0 solid rgba(6,9,23,.125);
+  border-radius: .625rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  position: relative;
+
+}
+.required::after{
+  color: #f62d4b;
+  content: "*";
+  font-weight: 700;
+  position: relative;
+}
+.form-label{
+  /* font-size: .875rem; */
+  font-weight: 500;
+  /* margin-bottom: .5rem; */
+}
+
+.desc{
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  padding: 8px;
+}
+
+

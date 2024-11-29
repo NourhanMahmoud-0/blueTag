@@ -1,0 +1,21 @@
+
+
+.form-wid{
+  /* background-color: teal; */
+  max-width:540px ;
+  box-shadow: 0 5px 20px rgba(173, 181, 189, .2);
+  border-radius: .938rem;
+}
+.required::after{
+  color: #f62947;
+  content: "*";
+  font-weight: 700;
+  position: relative;
+}
+.eyeIcon{
+  right: 15px;
+  top: 40px;
+  cursor: pointer;
+  color: #6c757d;
+  font-size: 13px;
+}
